@@ -1,0 +1,13 @@
+# 原始数据约 62MB，不入库；按 README 从 Olist 公开仓库下载
+data/
+# 运行生成的数据库文件
+olist.db
+*.db-journal
+*.aux
+*.log
+*.out
+report/report.pdf
+.env*
+
+__pycache__/
+*.pyc

@@ -1,0 +1,968 @@
+{
+  "q11_data_quality": [
+    {
+      "table_name": "orders",
+      "field": "order_delivered_customer_date",
+      "rows_cnt": 99441,
+      "missing": 2965
+    },
+    {
+      "table_name": "orders",
+      "field": "order_approved_at",
+      "rows_cnt": 99441,
+      "missing": 160
+    },
+    {
+      "table_name": "order_reviews",
+      "field": "review_comment_message",
+      "rows_cnt": 99224,
+      "missing": 58247
+    },
+    {
+      "table_name": "order_reviews",
+      "field": "review_comment_title",
+      "rows_cnt": 99224,
+      "missing": 87656
+    },
+    {
+      "table_name": "products",
+      "field": "product_category_name",
+      "rows_cnt": 32951,
+      "missing": 610
+    }
+  ],
+  "q01_state_gmv": [
+    {
+      "state": "SP",
+      "gmv": 5880142.84,
+      "orders": 41125,
+      "aov": 142.98
+    },
+    {
+      "state": "RJ",
+      "gmv": 2115902.11,
+      "orders": 12697,
+      "aov": 166.65
+    },
+    {
+      "state": "MG",
+      "gmv": 1843540.32,
+      "orders": 11496,
+      "aov": 160.36
+    },
+    {
+      "state": "RS",
+      "gmv": 877552.79,
+      "orders": 5415,
+      "aov": 162.06
+    },
+    {
+      "state": "PR",
+      "gmv": 794338.82,
+      "orders": 4982,
+      "aov": 159.44
+    },
+    {
+      "state": "SC",
+      "gmv": 608031.37,
+      "orders": 3599,
+      "aov": 168.94
+    },
+    {
+      "state": "BA",
+      "gmv": 606908.66,
+      "orders": 3344,
+      "aov": 181.49
+    },
+    {
+      "state": "DF",
+      "gmv": 351632.77,
+      "orders": 2120,
+      "aov": 165.86
+    },
+    {
+      "state": "GO",
+      "gmv": 340994.59,
+      "orders": 1998,
+      "aov": 170.67
+    },
+    {
+      "state": "ES",
+      "gmv": 323124.75,
+      "orders": 2018,
+      "aov": 160.12
+    }
+  ],
+  "q02_repeat_users": [
+    {
+      "total_users": 96096,
+      "repeat_users": 2997,
+      "repeat_rate_pct": 3.12,
+      "avg_orders_per_user": 1.035
+    }
+  ],
+  "q03_last_order_per_user": [
+    {
+      "uid": "87ab9fec999db8bd5774917de3cdf01c",
+      "order_id": "10a045cdf6a5650c21e9cfeb60384c16",
+      "order_status": "canceled",
+      "ts": "2018-10-17 17:30:18"
+    },
+    {
+      "uid": "262e1f1e26e92e86375f86840b4ffd63",
+      "order_id": "b059ee4de278302d550a3035c4cdb740",
+      "order_status": "canceled",
+      "ts": "2018-10-16 20:16:02"
+    },
+    {
+      "uid": "af5454198a97379394cacf676e1e96cb",
+      "order_id": "a2ac6dad85cf8af5b0afb510a240fe8c",
+      "order_status": "canceled",
+      "ts": "2018-10-03 18:55:29"
+    },
+    {
+      "uid": "634420a0ea42302205032ed44ac7fccc",
+      "order_id": "616fa7d4871b87832197b2a137a115d2",
+      "order_status": "canceled",
+      "ts": "2018-10-01 15:30:09"
+    },
+    {
+      "uid": "9bb92bebd4cb7511e1a02d5e50bc4655",
+      "order_id": "392ed9afd714e3c74767d0c4d3e3f477",
+      "order_status": "canceled",
+      "ts": "2018-09-29 09:13:03"
+    }
+  ],
+  "q04_repeat_interval": [
+    {
+      "repeat_pairs": 3345,
+      "avg_days_between_orders": 78.2,
+      "min_days": 0,
+      "max_days": 609
+    }
+  ],
+  "q05_monthly_gmv_cum": [
+    {
+      "ym": "2016-09",
+      "gmv": 279.69,
+      "cum_gmv": 279.69
+    },
+    {
+      "ym": "2016-10",
+      "gmv": 51354.52,
+      "cum_gmv": 51634.21
+    },
+    {
+      "ym": "2016-12",
+      "gmv": 19.62,
+      "cum_gmv": 51653.83
+    },
+    {
+      "ym": "2017-01",
+      "gmv": 136943.46,
+      "cum_gmv": 188597.29
+    },
+    {
+      "ym": "2017-02",
+      "gmv": 283561.69,
+      "cum_gmv": 472158.98
+    },
+    {
+      "ym": "2017-03",
+      "gmv": 425617.96,
+      "cum_gmv": 897776.94
+    },
+    {
+      "ym": "2017-04",
+      "gmv": 405848.61,
+      "cum_gmv": 1303625.55
+    },
+    {
+      "ym": "2017-05",
+      "gmv": 582710.83,
+      "cum_gmv": 1886336.38
+    },
+    {
+      "ym": "2017-06",
+      "gmv": 499652.24,
+      "cum_gmv": 2385988.62
+    },
+    {
+      "ym": "2017-07",
+      "gmv": 578753.73,
+      "cum_gmv": 2964742.35
+    },
+    {
+      "ym": "2017-08",
+      "gmv": 661986.28,
+      "cum_gmv": 3626728.63
+    },
+    {
+      "ym": "2017-09",
+      "gmv": 717102.72,
+      "cum_gmv": 4343831.35
+    },
+    {
+      "ym": "2017-10",
+      "gmv": 764861.15,
+      "cum_gmv": 5108692.5
+    },
+    {
+      "ym": "2017-11",
+      "gmv": 1173387.01,
+      "cum_gmv": 6282079.51
+    },
+    {
+      "ym": "2017-12",
+      "gmv": 862299.69,
+      "cum_gmv": 7144379.2
+    },
+    {
+      "ym": "2018-01",
+      "gmv": 1102475.27,
+      "cum_gmv": 8246854.47
+    },
+    {
+      "ym": "2018-02",
+      "gmv": 980154.6,
+      "cum_gmv": 9227009.07
+    },
+    {
+      "ym": "2018-03",
+      "gmv": 1152785.45,
+      "cum_gmv": 10379794.52
+    },
+    {
+      "ym": "2018-04",
+      "gmv": 1156634.92,
+      "cum_gmv": 11536429.44
+    },
+    {
+      "ym": "2018-05",
+      "gmv": 1146158.06,
+      "cum_gmv": 12682587.5
+    },
+    {
+      "ym": "2018-06",
+      "gmv": 1020606.1,
+      "cum_gmv": 13703193.6
+    },
+    {
+      "ym": "2018-07",
+      "gmv": 1039816.84,
+      "cum_gmv": 14743010.44
+    },
+    {
+      "ym": "2018-08",
+      "gmv": 997040.03,
+      "cum_gmv": 15740050.47
+    },
+    {
+      "ym": "2018-09",
+      "gmv": 166.46,
+      "cum_gmv": 15740216.93
+    }
+  ],
+  "q06_funnel": [
+    {
+      "placed": 99441,
+      "approved": 99281,
+      "shipped": 97658,
+      "delivered": 96476,
+      "delivered_rate_pct": 97.02
+    }
+  ],
+  "q07_cohort_return": [
+    {
+      "cohort_month": "2016-09",
+      "cohort_users": 4,
+      "returned_users": 0,
+      "return_rate_pct": 0
+    },
+    {
+      "cohort_month": "2016-10",
+      "cohort_users": 321,
+      "returned_users": 0,
+      "return_rate_pct": 0
+    },
+    {
+      "cohort_month": "2016-12",
+      "cohort_users": 1,
+      "returned_users": 1,
+      "return_rate_pct": 100
+    },
+    {
+      "cohort_month": "2017-01",
+      "cohort_users": 764,
+      "returned_users": 3,
+      "return_rate_pct": 0.39
+    },
+    {
+      "cohort_month": "2017-02",
+      "cohort_users": 1752,
+      "returned_users": 4,
+      "return_rate_pct": 0.23
+    },
+    {
+      "cohort_month": "2017-03",
+      "cohort_users": 2636,
+      "returned_users": 13,
+      "return_rate_pct": 0.49
+    },
+    {
+      "cohort_month": "2017-04",
+      "cohort_users": 2352,
+      "returned_users": 14,
+      "return_rate_pct": 0.6
+    },
+    {
+      "cohort_month": "2017-05",
+      "cohort_users": 3596,
+      "returned_users": 18,
+      "return_rate_pct": 0.5
+    },
+    {
+      "cohort_month": "2017-06",
+      "cohort_users": 3139,
+      "returned_users": 15,
+      "return_rate_pct": 0.48
+    },
+    {
+      "cohort_month": "2017-07",
+      "cohort_users": 3894,
+      "returned_users": 20,
+      "return_rate_pct": 0.51
+    },
+    {
+      "cohort_month": "2017-08",
+      "cohort_users": 4184,
+      "returned_users": 29,
+      "return_rate_pct": 0.69
+    },
+    {
+      "cohort_month": "2017-09",
+      "cohort_users": 4130,
+      "returned_users": 28,
+      "return_rate_pct": 0.68
+    },
+    {
+      "cohort_month": "2017-10",
+      "cohort_users": 4470,
+      "returned_users": 31,
+      "return_rate_pct": 0.69
+    },
+    {
+      "cohort_month": "2017-11",
+      "cohort_users": 7304,
+      "returned_users": 40,
+      "return_rate_pct": 0.55
+    },
+    {
+      "cohort_month": "2017-12",
+      "cohort_users": 5487,
+      "returned_users": 14,
+      "return_rate_pct": 0.26
+    },
+    {
+      "cohort_month": "2018-01",
+      "cohort_users": 7025,
+      "returned_users": 24,
+      "return_rate_pct": 0.34
+    },
+    {
+      "cohort_month": "2018-02",
+      "cohort_users": 6451,
+      "returned_users": 25,
+      "return_rate_pct": 0.39
+    },
+    {
+      "cohort_month": "2018-03",
+      "cohort_users": 6965,
+      "returned_users": 32,
+      "return_rate_pct": 0.46
+    },
+    {
+      "cohort_month": "2018-04",
+      "cohort_users": 6711,
+      "returned_users": 39,
+      "return_rate_pct": 0.58
+    },
+    {
+      "cohort_month": "2018-05",
+      "cohort_users": 6622,
+      "returned_users": 35,
+      "return_rate_pct": 0.53
+    },
+    {
+      "cohort_month": "2018-06",
+      "cohort_users": 5940,
+      "returned_users": 25,
+      "return_rate_pct": 0.42
+    },
+    {
+      "cohort_month": "2018-07",
+      "cohort_users": 6071,
+      "returned_users": 44,
+      "return_rate_pct": 0.72
+    }
+  ],
+  "q08_rfm": [
+    {
+      "r_score": 2,
+      "f_score": 1,
+      "m_score": 2,
+      "users": 4028
+    },
+    {
+      "r_score": 1,
+      "f_score": 1,
+      "m_score": 2,
+      "users": 3991
+    },
+    {
+      "r_score": 3,
+      "f_score": 1,
+      "m_score": 1,
+      "users": 3957
+    },
+    {
+      "r_score": 1,
+      "f_score": 1,
+      "m_score": 1,
+      "users": 3952
+    },
+    {
+      "r_score": 4,
+      "f_score": 1,
+      "m_score": 4,
+      "users": 3856
+    },
+    {
+      "r_score": 4,
+      "f_score": 1,
+      "m_score": 3,
+      "users": 3782
+    },
+    {
+      "r_score": 5,
+      "f_score": 1,
+      "m_score": 4,
+      "users": 3771
+    },
+    {
+      "r_score": 5,
+      "f_score": 1,
+      "m_score": 1,
+      "users": 3767
+    },
+    {
+      "r_score": 3,
+      "f_score": 1,
+      "m_score": 4,
+      "users": 3764
+    },
+    {
+      "r_score": 5,
+      "f_score": 1,
+      "m_score": 3,
+      "users": 3750
+    },
+    {
+      "r_score": 3,
+      "f_score": 1,
+      "m_score": 3,
+      "users": 3711
+    },
+    {
+      "r_score": 1,
+      "f_score": 1,
+      "m_score": 3,
+      "users": 3692
+    },
+    {
+      "r_score": 3,
+      "f_score": 1,
+      "m_score": 2,
+      "users": 3666
+    },
+    {
+      "r_score": 2,
+      "f_score": 1,
+      "m_score": 3,
+      "users": 3663
+    },
+    {
+      "r_score": 4,
+      "f_score": 1,
+      "m_score": 1,
+      "users": 3656
+    },
+    {
+      "r_score": 2,
+      "f_score": 1,
+      "m_score": 1,
+      "users": 3637
+    },
+    {
+      "r_score": 5,
+      "f_score": 1,
+      "m_score": 2,
+      "users": 3576
+    },
+    {
+      "r_score": 4,
+      "f_score": 1,
+      "m_score": 2,
+      "users": 3572
+    },
+    {
+      "r_score": 1,
+      "f_score": 1,
+      "m_score": 5,
+      "users": 3566
+    },
+    {
+      "r_score": 2,
+      "f_score": 1,
+      "m_score": 5,
+      "users": 3548
+    },
+    {
+      "r_score": 2,
+      "f_score": 1,
+      "m_score": 4,
+      "users": 3546
+    },
+    {
+      "r_score": 4,
+      "f_score": 1,
+      "m_score": 5,
+      "users": 3534
+    },
+    {
+      "r_score": 5,
+      "f_score": 1,
+      "m_score": 5,
+      "users": 3489
+    },
+    {
+      "r_score": 1,
+      "f_score": 1,
+      "m_score": 4,
+      "users": 3341
+    },
+    {
+      "r_score": 3,
+      "f_score": 1,
+      "m_score": 5,
+      "users": 3281
+    },
+    {
+      "r_score": 5,
+      "f_score": 2,
+      "m_score": 5,
+      "users": 323
+    },
+    {
+      "r_score": 3,
+      "f_score": 2,
+      "m_score": 5,
+      "users": 319
+    },
+    {
+      "r_score": 4,
+      "f_score": 2,
+      "m_score": 5,
+      "users": 280
+    },
+    {
+      "r_score": 2,
+      "f_score": 2,
+      "m_score": 5,
+      "users": 266
+    },
+    {
+      "r_score": 1,
+      "f_score": 2,
+      "m_score": 5,
+      "users": 206
+    },
+    {
+      "r_score": 3,
+      "f_score": 2,
+      "m_score": 4,
+      "users": 152
+    },
+    {
+      "r_score": 5,
+      "f_score": 2,
+      "m_score": 4,
+      "users": 143
+    },
+    {
+      "r_score": 4,
+      "f_score": 2,
+      "m_score": 4,
+      "users": 141
+    },
+    {
+      "r_score": 2,
+      "f_score": 2,
+      "m_score": 4,
+      "users": 137
+    },
+    {
+      "r_score": 1,
+      "f_score": 2,
+      "m_score": 4,
+      "users": 109
+    },
+    {
+      "r_score": 2,
+      "f_score": 2,
+      "m_score": 3,
+      "users": 93
+    },
+    {
+      "r_score": 3,
+      "f_score": 2,
+      "m_score": 3,
+      "users": 82
+    },
+    {
+      "r_score": 5,
+      "f_score": 2,
+      "m_score": 3,
+      "users": 75
+    },
+    {
+      "r_score": 4,
+      "f_score": 2,
+      "m_score": 3,
+      "users": 71
+    },
+    {
+      "r_score": 1,
+      "f_score": 2,
+      "m_score": 3,
+      "users": 65
+    },
+    {
+      "r_score": 1,
+      "f_score": 2,
+      "m_score": 2,
+      "users": 38
+    },
+    {
+      "r_score": 4,
+      "f_score": 3,
+      "m_score": 5,
+      "users": 38
+    },
+    {
+      "r_score": 2,
+      "f_score": 2,
+      "m_score": 2,
+      "users": 36
+    },
+    {
+      "r_score": 5,
+      "f_score": 3,
+      "m_score": 5,
+      "users": 35
+    },
+    {
+      "r_score": 5,
+      "f_score": 2,
+      "m_score": 2,
+      "users": 32
+    },
+    {
+      "r_score": 4,
+      "f_score": 2,
+      "m_score": 2,
+      "users": 31
+    },
+    {
+      "r_score": 2,
+      "f_score": 3,
+      "m_score": 5,
+      "users": 26
+    },
+    {
+      "r_score": 3,
+      "f_score": 2,
+      "m_score": 2,
+      "users": 25
+    },
+    {
+      "r_score": 3,
+      "f_score": 3,
+      "m_score": 5,
+      "users": 24
+    },
+    {
+      "r_score": 1,
+      "f_score": 3,
+      "m_score": 5,
+      "users": 16
+    },
+    {
+      "r_score": 5,
+      "f_score": 4,
+      "m_score": 5,
+      "users": 13
+    },
+    {
+      "r_score": 4,
+      "f_score": 3,
+      "m_score": 4,
+      "users": 11
+    },
+    {
+      "r_score": 2,
+      "f_score": 3,
+      "m_score": 4,
+      "users": 9
+    },
+    {
+      "r_score": 4,
+      "f_score": 2,
+      "m_score": 1,
+      "users": 9
+    },
+    {
+      "r_score": 1,
+      "f_score": 2,
+      "m_score": 1,
+      "users": 7
+    },
+    {
+      "r_score": 4,
+      "f_score": 4,
+      "m_score": 5,
+      "users": 7
+    },
+    {
+      "r_score": 4,
+      "f_score": 5,
+      "m_score": 5,
+      "users": 7
+    },
+    {
+      "r_score": 5,
+      "f_score": 5,
+      "m_score": 5,
+      "users": 7
+    },
+    {
+      "r_score": 3,
+      "f_score": 3,
+      "m_score": 4,
+      "users": 6
+    },
+    {
+      "r_score": 5,
+      "f_score": 2,
+      "m_score": 1,
+      "users": 6
+    },
+    {
+      "r_score": 1,
+      "f_score": 3,
+      "m_score": 4,
+      "users": 5
+    },
+    {
+      "r_score": 5,
+      "f_score": 3,
+      "m_score": 4,
+      "users": 5
+    },
+    {
+      "r_score": 2,
+      "f_score": 4,
+      "m_score": 5,
+      "users": 4
+    },
+    {
+      "r_score": 3,
+      "f_score": 5,
+      "m_score": 5,
+      "users": 4
+    },
+    {
+      "r_score": 5,
+      "f_score": 3,
+      "m_score": 3,
+      "users": 4
+    },
+    {
+      "r_score": 1,
+      "f_score": 3,
+      "m_score": 3,
+      "users": 3
+    },
+    {
+      "r_score": 2,
+      "f_score": 2,
+      "m_score": 1,
+      "users": 3
+    },
+    {
+      "r_score": 3,
+      "f_score": 2,
+      "m_score": 1,
+      "users": 2
+    },
+    {
+      "r_score": 3,
+      "f_score": 3,
+      "m_score": 3,
+      "users": 2
+    },
+    {
+      "r_score": 3,
+      "f_score": 4,
+      "m_score": 5,
+      "users": 2
+    },
+    {
+      "r_score": 1,
+      "f_score": 3,
+      "m_score": 1,
+      "users": 1
+    },
+    {
+      "r_score": 1,
+      "f_score": 3,
+      "m_score": 2,
+      "users": 1
+    },
+    {
+      "r_score": 1,
+      "f_score": 4,
+      "m_score": 2,
+      "users": 1
+    },
+    {
+      "r_score": 1,
+      "f_score": 4,
+      "m_score": 3,
+      "users": 1
+    },
+    {
+      "r_score": 1,
+      "f_score": 4,
+      "m_score": 5,
+      "users": 1
+    },
+    {
+      "r_score": 1,
+      "f_score": 5,
+      "m_score": 3,
+      "users": 1
+    },
+    {
+      "r_score": 2,
+      "f_score": 3,
+      "m_score": 3,
+      "users": 1
+    },
+    {
+      "r_score": 4,
+      "f_score": 3,
+      "m_score": 3,
+      "users": 1
+    }
+  ],
+  "q09_delivery_vs_review": [
+    {
+      "delivery_bucket": "0-7天",
+      "orders": 25933,
+      "avg_days": 4.7,
+      "avg_score": 4.42,
+      "bad_review_pct": 7.45
+    },
+    {
+      "delivery_bucket": "(7,14]天",
+      "orders": 40000,
+      "avg_days": 10.1,
+      "avg_score": 4.31,
+      "bad_review_pct": 8.96
+    },
+    {
+      "delivery_bucket": "(14,21]天",
+      "orders": 17582,
+      "avg_days": 16.9,
+      "avg_score": 4.14,
+      "bad_review_pct": 11.68
+    },
+    {
+      "delivery_bucket": "21天以上",
+      "orders": 12315,
+      "avg_days": 30.7,
+      "avg_score": 3.12,
+      "bad_review_pct": 38.21
+    }
+  ],
+  "q10_category_share": [
+    {
+      "category": "health_beauty",
+      "gmv": 1437847.4,
+      "gmv_share_pct": 9.13
+    },
+    {
+      "category": "watches_gifts",
+      "gmv": 1298292.47,
+      "gmv_share_pct": 8.25
+    },
+    {
+      "category": "bed_bath_table",
+      "gmv": 1240386.13,
+      "gmv_share_pct": 7.88
+    },
+    {
+      "category": "sports_leisure",
+      "gmv": 1148911.35,
+      "gmv_share_pct": 7.3
+    },
+    {
+      "category": "computers_accessories",
+      "gmv": 1050941.58,
+      "gmv_share_pct": 6.68
+    },
+    {
+      "category": "furniture_decor",
+      "gmv": 900360.03,
+      "gmv_share_pct": 5.72
+    },
+    {
+      "category": "housewares",
+      "gmv": 772956.18,
+      "gmv_share_pct": 4.91
+    },
+    {
+      "category": "cool_stuff",
+      "gmv": 704086.24,
+      "gmv_share_pct": 4.47
+    },
+    {
+      "category": "auto",
+      "gmv": 678711.76,
+      "gmv_share_pct": 4.31
+    },
+    {
+      "category": "garden_tools",
+      "gmv": 579733.63,
+      "gmv_share_pct": 3.68
+    }
+  ],
+  "q12_seller_concentration": [
+    {
+      "top10_gmv": 2023089.1,
+      "top10_share_pct": 12.85,
+      "sellers": 3053
+    }
+  ]
+}

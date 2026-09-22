@@ -1,0 +1,106 @@
+\documentclass[11pt]{ctexart}
+\usepackage[a4paper,left=2cm,right=2cm,top=1.9cm,bottom=1.8cm]{geometry}
+\usepackage{booktabs,amsmath,pgfplots,hyperref}
+\pgfplotsset{compat=1.18}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlength{\parindent}{2em}
+\begin{document}
+\begin{center}{\LARGE\bfseries Olist 电商订单分析报告}\\[8pt]99,441 笔订单 · 8 张表 · SQL / SQLite · 审计修订版\end{center}
+\section{结果与指标边界}
+项目关注数据关联粒度、订单履约覆盖、重复下单和配送评价。所有结论来自公开历史样本，属于描述性分析。代码由 AI 辅助实现并做结果核验；没有线上业务试验和已实现的收益。
+
+签收时间戳覆盖率为 97.02\%；全期重复下单率为 3.12\%。前者不等于访客转化率，后者包含取消等全部订单状态，不应称为成交复购率。
+
+\section{数据与统一口径}
+来源为 Olist 在 Kaggle 发布的公开电商数据，时间范围 2016 年 9 月至 2018 年 10 月。原始文件不随仓库分发；本地输入 SHA-256 记录在结果目录，尚未与官方下载包逐字节比对。
+
+金额口径为商品价格加运费，单位 BRL（巴西雷亚尔），统一剔除 canceled 和 unavailable 状态。金额不代表净收入或已结算收入。重复下单和次月回流单独使用全部下单状态。
+\begin{center}
+\small
+\begin{tabular}{ll}
+\toprule
+表 & 行数 \\
+\midrule
+customers & 99441 \\
+orders & 99441 \\
+order\_items & 112650 \\
+order\_payments & 103886 \\
+order\_reviews & 99224 \\
+products & 32951 \\
+sellers & 3095 \\
+category\_translation & 71 \\
+\bottomrule
+\end{tabular}
+\end{center}
+客户标识使用 customer\_unique\_id；customer\_id 为订单级标识。评价表存在一单多评价，先按答复时间取每单最新评价，再关联订单。评论标题、内容缺失只限制相应文本分析的覆盖范围，不表示全部文本都没有价值。
+\newpage
+\section{配送时长与评分：相关性而非因果}
+仅保留签收时间存在、配送天数非负且评分在 1--5 的订单；差评为 1--2 分。分桶使用连续天数，第二桶为大于 7 且不超过 14 天。
+\begin{center}
+\small
+\begin{tabular}{llll}
+\toprule
+配送天数 & 订单数 & 平均评分 & 差评率 \\
+\midrule
+0-7天 & 25933 & 4.42 & 7.45\% \\
+(7,14]天 & 40000 & 4.31 & 8.96\% \\
+(14,21]天 & 17582 & 4.14 & 11.68\% \\
+21天以上 & 12315 & 3.12 & 38.21\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{center}\begin{tikzpicture}\begin{axis}[
+width=14cm,height=6cm,ybar,ymin=0,ymax=45,bar width=22pt,
+xtick={0,1,2,3},xticklabels={{0--7天},{7至14天},{14至21天},{21天以上}},
+ylabel={差评率（\%）},nodes near coords,grid=major]
+\addplot[fill=blue!45] coordinates {(0,7.45) (1,8.96) (2,11.68) (3,38.21)};
+\end{axis}\end{tikzpicture}\end{center}
+21 天以上订单差评率 38.21\%，7 天内为 7.45\%，约相差 5.1 倍。这只支持进一步研究配送体验，不能证明缩短配送一定降低多少差评；品类、卖家、地区等因素尚未控制。
+
+\section{履约时间戳覆盖}
+\begin{center}
+\small
+\begin{tabular}{ll}
+\toprule
+阶段 & 数量 \\
+\midrule
+下单 & 99441 \\
+支付通过时间存在 & 99281 \\
+发货时间存在 & 97658 \\
+签收时间存在 & 96476 \\
+\bottomrule
+\end{tabular}
+\end{center}
+这些统计逐项计数时间戳非空值，并非严格嵌套漏斗。无法据此判断 SLA、成本或瓶颈，更不能据此停止转化优化。
+\newpage
+\section{重复下单与固定观察窗口}
+96,096 个用户标识中 2,997 个有多次下单，全期重复下单率 3.12\%。不同用户可观察期不同，全期比例只能描述当前样本。
+
+次月回流定义为首单后下一自然月再次下单。只保留首单不晚于 2018-07 的同期群，使下一月不超过选定末月 2018-08。该末月由末端数据稀疏情况确定，不保证上游完整采集。不得把旧版“之后任意月份回流”当作次月留存。
+
+\section{RFM 与供给结构}
+R、M 用五等分窗口探索分层，并列值按用户标识确定顺序；F 按真实次数 1、2、3、4、至少 5 次分档，避免一次购买用户进入高频档。输出保留三维分组，不再宣称某组是“最低召回成本人群”。
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+品类 & 含运费金额 BRL & 占比 \\
+\midrule
+health\_beauty & 1,437,847.40 & 9.13\% \\
+watches\_gifts & 1,298,292.47 & 8.25\% \\
+bed\_bath\_table & 1,240,386.13 & 7.88\% \\
+sports\_leisure & 1,148,911.35 & 7.3\% \\
+computers\_accessories & 1,050,941.58 & 6.68\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+有效订单口径下，3,053 个卖家的 Top10 金额占比为 12.85\%。这只能描述集中度，不能排除供应链依赖或判断卖家引流能力。
+
+\section{验证与下一步}
+独立 Python CSV 计算核验订单规模、金额加总、最新评价去重、配送分桶、固定次月回流、单次购买频次分组，并检查看板与导出指标一致。结果数据是看板和 Tableau CSV 的共同来源。
+
+配送预警、召回及区域扩张仅作为待检验假设；实施前需要成本信息和实验。当前只完成 HTML 看板、CSV 与重建指南，未完成 Tableau Public 发布。
+
+\noindent 来源：\url{https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce}\\
+复现入口：README.md；完整查询、结果及审计说明见同仓库。
+\end{document}
